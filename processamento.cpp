@@ -23,3 +23,18 @@ void Processamento::setPalavras(const vector<string>& palavras){
 const vector<string>& Processamento::getPalavras() const{
     return this->palavras;
 }
+
+string Processamento::processamento(int posicao){
+    string palavra = this->palavras.at(posicao);
+    string estado = this->automato->getInicial();
+    cout << "\nInciando o processamento de : " << palavra << endl; 
+    cout << "Configuracao Inicial inicial: [" << estado << " , " << palavra << "] " << endl;
+    if (palavra == "lambda"){
+        cout << "Executando a transicao: " << estado << " -lambda-> " << estado << "resulta em [" << estado << " , lambda]";
+        return estado;
+    }
+
+    for (int i = 0; i < palavra.length();i++){
+    }
+
+}

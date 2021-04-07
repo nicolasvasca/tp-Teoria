@@ -2,6 +2,7 @@
 #define PROCESSAMENTO_H_
 
 #include "Automato.h"
+#include <iostream>
 
 class Processamento {
 private:
@@ -18,6 +19,8 @@ public:
 	Automato* getAutomato() const;
 	void setPalavras(const vector<string>& palavras);
 	const vector<string>& getPalavras() const;
+
+	string processamento(int);
 };
 
 #endif
