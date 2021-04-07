@@ -10,6 +10,7 @@ using namespace std;
 void lerArquivo (string nome, Processamento *p){
     Automato * a = new Automato();
     Transicao *t = new Transicao();
+    vector<string> palavras;
 
     ifstream in (nome);
     string temporario;
@@ -59,7 +60,7 @@ void lerArquivo (string nome, Processamento *p){
             }
             if (ch == '\n') {
                 isInfo = false;
-                p->adicionaPalavras(temporario);
+                palavras.push_back(temporario);
                 temporario.clear(); 
             }
         }
@@ -69,4 +70,5 @@ void lerArquivo (string nome, Processamento *p){
         }
     }
     p->setAutomato(a);
+    p->setPalavras(palavras);
 }
