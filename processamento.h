@@ -14,8 +14,8 @@ public:
 
 	void adicionaPalavras(string);
 
-	void setAutomato(const Automato*& automato);
-	const Automato*& getAutomato() const;
+	void setAutomato(Automato* automato);
+	Automato* getAutomato() const;
 	void setPalavras(const vector<string>& palavras);
 	const vector<string>& getPalavras() const;
 };
