@@ -40,7 +40,7 @@ string Processamento::processamento(int posicao){
         possivelEstado = this->automato.getDestino(estado,string(1,palavra[i]));
         if(possivelEstado == "break")
         {
-            cout << "\n Estado nao processa letra: " << palavra[i] << "portanto a " <<  palavra << " nao e aceita pelo AF." << endl;
+            cout << "\nEstado nao processa letra: " << palavra[i] << "portanto a " <<  palavra << " nao e aceita pelo AF." << endl;
             return "break";
         }
         if(i == palavra.length()-1){

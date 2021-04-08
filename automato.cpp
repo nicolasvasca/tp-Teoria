@@ -27,11 +27,12 @@ bool Automato::boolFinal(string estado){
     return false;
 } 
 string Automato::getDestino(string origem,string simbolo){
-        /*if ((*it)->getOrigem() == origem && (*it)->getSimbolo() == simbolo){
-            return (*it)->getDestino();
-		}*/
-	
-    return "break";
+     for (auto x : this->transicoes) {
+        if(x.getOrigem()== origem &&x.getSimbolo()== simbolo){
+            return x.getDestino();
+        }
+    }
+	return "break";
 }
 
 void Automato::setIncial(const string& inicial){

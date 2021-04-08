@@ -7,4 +7,5 @@ C 0 C
 C 1 C
 test: 1001
 test: 10
+test: 1101101101101100
 test: lambda

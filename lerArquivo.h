@@ -69,15 +69,6 @@ void lerArquivo (string nome, Processamento *p){
             line++;
         }
     }
-    vector<Transicao> t1 = a->getTransicoes();
-
-    for (auto x : t1) {
-        cout << "ORIGEM:"  << x.getOrigem() << endl;
-        cout << "SIMBOLO:"  << x.getSimbolo() << endl;
-        cout << "DESTINO:"  << x.getDestino() << endl;
-    }
-
-
     p->setAutomato(*a);
     p->setPalavras(palavras);
 }
