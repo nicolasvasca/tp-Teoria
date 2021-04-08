@@ -2,7 +2,7 @@
 
 int main(){
     Processamento *processamento = new Processamento();
-    string nome = "afd1.txt";
+    string nome = "afd3.txt";
     string estado;
     lerArquivo(nome,processamento);
 

@@ -1,0 +1,14 @@
+A ; A D
+A 1 B
+A 0 C
+B 1 A
+B 0 D
+C 0 A
+C 1 D
+D 1 C
+D 0 B
+test: 1001
+test: 111000
+test: 11001000
+test: 1111000
+test: lambda
