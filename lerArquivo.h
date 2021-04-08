@@ -46,7 +46,7 @@ void lerArquivo (string nome, Processamento *p){
             }
             else if(origem == false && simbolo == false) {
                 t->setDestino(string(1,ch));
-                a->adicionaTransicao(t);
+                a->adicionaTransicao(*t);
                 origem = true;
             }
         }
@@ -69,6 +69,15 @@ void lerArquivo (string nome, Processamento *p){
             line++;
         }
     }
-    p->setAutomato(a);
+    vector<Transicao> t1 = a->getTransicoes();
+
+    for (auto x : t1) {
+        cout << "ORIGEM:"  << x.getOrigem() << endl;
+        cout << "SIMBOLO:"  << x.getSimbolo() << endl;
+        cout << "DESTINO:"  << x.getDestino() << endl;
+    }
+
+
+    p->setAutomato(*a);
     p->setPalavras(palavras);
 }

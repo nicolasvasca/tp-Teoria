@@ -1,20 +1,21 @@
 #include "Automato.h"
+#include <iostream>
 
 Automato::Automato(){
     this->inicial = " ";
 }
-Automato::Automato(string inicial,vector<string> final,vector<Transicao*> transicoes){
-    this->inicial = inicial;
-    this->final = final;
-    this->transicoes = transicoes;
+Automato::Automato(string i,vector<string> f,vector<Transicao> t){
+    inicial = i;
+    final = f;
+    transicoes = t;
 }
 Automato::~Automato(){}
 
-void Automato::adicionaFinais(string final){
-    this->final.push_back(final);
+void Automato::adicionaFinais(string f){
+    final.push_back(f);
 }
-void Automato::adicionaTransicao(Transicao* transicao){
-    this->transicoes.push_back(transicao);
+void Automato::adicionaTransicao(Transicao transicao){
+    transicoes.push_back(transicao);
 }
 
 bool Automato::boolFinal(string estado){
@@ -26,29 +27,28 @@ bool Automato::boolFinal(string estado){
     return false;
 } 
 string Automato::getDestino(string origem,string simbolo){
-    for (vector<Transicao*>::iterator it = this->transicoes.begin(); it!=this->transicoes.end();it++){
-		if ((*it)->getOrigem() == origem && (*it)->getSimbolo() == simbolo){
+        /*if ((*it)->getOrigem() == origem && (*it)->getSimbolo() == simbolo){
             return (*it)->getDestino();
-		}
-	}
+		}*/
+	
     return "break";
 }
 
 void Automato::setIncial(const string& inicial){
     this->inicial = inicial;
 }
-const string& Automato::getInicial() const{
+const string& Automato::getInicial() {
     return this->inicial;
 }
 void Automato::setFinal(const vector<string>& final){
     this->final = final;
 }
-const vector<string>& Automato::getFinal() const{
+const vector<string>& Automato::getFinal(){
     return this->final;
 }
-void Automato::setTransicoes(const vector<Transicao*>& transicoes){
-    this->transicoes = transicoes;
+void Automato::setTransicoes(vector<Transicao> transicao){
+    this->transicoes = transicao;
 }
-const vector<Transicao*>& Automato::getTransicoes() const{
-    return this->transicoes;
+vector<Transicao> Automato::getTransicoes(){
+   return this->transicoes;
 }

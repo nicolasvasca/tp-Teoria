@@ -14,11 +14,11 @@ public:
 	Transicao(string,string,string);
 	virtual ~Transicao();
 
-	const string& getOrigem() const;
+	const string& getOrigem();
 	void setOrigem(const string& origem);
-    const string& getSimbolo() const;
+    const string& getSimbolo() ;
 	void setSimbolo(const string& simbolo);
-    const string& getDestino() const;
+    const string& getDestino();
 	void setDestino(const string& destino);
 	
 };
