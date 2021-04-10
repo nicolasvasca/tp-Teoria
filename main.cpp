@@ -1,26 +1,32 @@
-#include "lerArquivo.h"
+#include "afd.h"
+#include "menu.h"
 
 int main(){
     Processamento *processamento = new Processamento();
-    string nome = "afd3.txt";
-    string estado;
-    lerArquivo(nome,processamento);
+    vector<string> nome;
+    int m = 1;
+    while(m!=0){
+        cout << "\nMenu " << endl; 
+        cout << "[1] AFD1" << endl;
+        cout << "[2] AFD2" << endl;
+        cout << "[3] AFD3" << endl;
+        cout << "[4] AF1" << endl;
+        cout << "[5] AF2" << endl;
+        cout << "[6] AF3" << endl;
+        cout << "[7] INSERIR NOVO AF" << endl;
+        cout << "[0] SAIR" << endl;
+        cin >> m;
+        
+        if(m!=0 && m !=7){
+            nome = menu(m);
+            if(nome[0]=="afd"){
+                afd(nome[1], processamento);
+            }
+        }
+        
 
-    for (int i = 0; i < processamento->getPalavras().size(); i++){
-        estado = processamento->processamento(i);
-        if (estado == "break"){
-            cout << endl;
-        }
-        else{
-            if (processamento->getAutomato().boolFinal(estado)){
-                cout << estado << " e um estado final." << endl;
-                cout << "A palavra " << processamento->getPalavras().at(i) << " e aceita pelo AF. " << endl;
-            }
-            else {
-                cout << estado << " nao e um estado final." << endl;
-                cout << "A palavra " << processamento->getPalavras().at(i) << " nao e aceita pelo AF. " << endl;
-            }
-        }
+
     }
+    
     return 1;
 }
